@@ -53,7 +53,7 @@ class Logo
         imagedestroy($image);
     }
 
-    private function fillWhitelyBackground($image, int $color): void
+    private function fillWhitelyBackground($image, int $color)
     {
         imagefilledrectangle(
             $image,                             // GdImage
@@ -65,7 +65,7 @@ class Logo
         );
     }
 
-    private function makeEllipse($image, int $color): void
+    private function makeEllipse($image, int $color)
     {
         imagefilledellipse(
             $image,                 // GdImage
@@ -77,7 +77,7 @@ class Logo
         );
     }
 
-    private function insetText($image, int $color, string $text): void
+    private function insetText($image, int $color, string $text)
     {
         imagettftext(
             $image,             // GdImage
