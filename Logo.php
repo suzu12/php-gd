@@ -13,15 +13,15 @@ class Logo
 
     // フォント(.ttf)のパス
     // install したり PC に入っているものを使用することができる
-    private const FONT_TYPE = __DIR__.'/fonts/ipaexm.ttf';
+    private const FONT_TYPE = __DIR__ . '/fonts/ipaexm.ttf';
 
     // 背景(白で塗りつぶしたいのでXとYの終点は　LOGO_WIDTH, LOGO_HIGHT と同じになる)
     private const BACKGROUND_START_COORDINATE = 0;
 
-    private const Ellipse_CENTER_X = 100;
-    private const Ellipse_CENTER_Y = 50;
-    private const Ellipse_WIDTH = 180;
-    private const Ellipse_HIGHT = 90;
+    private const ELLIPSE_CENTER_X = 100;
+    private const ELLIPSE_CENTER_Y = 50;
+    private const ELLIPSE_WIDTH = 180;
+    private const ELLIPSE_HIGHT = 90;
 
     public function createLogo(string $text)
     {
@@ -38,7 +38,7 @@ class Logo
         $this->fillWhitelyBackground($image, $white);
 
         // 好きな色で塗りつぶす(今回は青)
-        $blue = imagecolorallocate($image, 65, 105 , 225);
+        $blue = imagecolorallocate($image, 65, 105, 225);
         $this->makeEllipse($image, $blue);
 
         // テキストを挿入
@@ -69,10 +69,10 @@ class Logo
     {
         imagefilledellipse(
             $image,                 // GdImage
-            self::Ellipse_CENTER_X, // 中心の x 座標
-            self::Ellipse_CENTER_Y, // 中心の y 座標
-            self::Ellipse_WIDTH,    // 円の幅
-            self::Ellipse_HIGHT,    // 円の高さ
+            self::ELLIPSE_CENTER_X, // 中心の x 座標
+            self::ELLIPSE_CENTER_Y, // 中心の y 座標
+            self::ELLIPSE_WIDTH,    // 円の幅
+            self::ELLIPSE_HIGHT,    // 円の高さ
             $color                  // 指定した色
         );
     }
@@ -93,5 +93,5 @@ class Logo
 }
 
 $text = "suzu";
-$logo = new Logo;
+$logo = new Logo();
 $logo->createLogo($text);
